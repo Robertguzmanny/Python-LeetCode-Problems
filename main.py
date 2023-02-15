@@ -1,7 +1,7 @@
-from typing import List
-
-
-def twoSum(nums: List[int], target: int) -> List[int]:
+# from typing import List
+#
+#
+def twoSum(nums, target):
     hashmap = {}
     for i in range(len(nums)):
         complement = target - nums[i]
@@ -100,7 +100,7 @@ test_case()
 
 
 class Solution:
-  def addBoldTag(s: str, words: List[str]) -> str:
+  def addBoldTag(s,words):
     n = len(s)
     ans = []
     # bold[i] := True if s[i] should be bolded
@@ -242,16 +242,4 @@ def test():
 test()
 
 
-
-
-
-
-
-
-
-        
-
-
-
-
-
+print("Hello all")
