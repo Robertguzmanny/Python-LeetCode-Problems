@@ -103,42 +103,41 @@
 # test_case()
 #
 #
+# #
+# class Solution:
+#   def addBoldTag(s,word):
+#     n = len(s)
+#     ans = []
+#     # bold[i] := True if s[i] should be bolded
+#     bold = [0] * n
 #
-class Solution:
-  def addBoldTag(s,words):
-    n = len(s)
-    ans = []
-    # bold[i] := True if s[i] should be bolded
-    bold = [0] * n
-
-    boldEnd = -1  # s[i:boldEnd] should be bolded
-    for i in range(n):
-      for word in words:
-        if s[i:].startswith(word):
-          boldEnd = max(boldEnd, i + len(word))
-      bold[i] = boldEnd > i
-
-    # Construct the with bold tags
-    i = 0
-    while i < n:
-      if bold[i]:
-        j = i
-        while j < n and bold[j]:
-          j += 1
-        # s[i:j] should be bolded
-        ans.append('<b>' + s[i:j] + '</b>')
-        i = j
-      else:
-        ans.append(s[i])
-        i += 1
-
-    return ''.join(ans)
-
-
-s = ["gay", "elden"]
-words = "elden is a gay person"
-my_instance = Solution()
-print(my_instance.Solution)
+#     boldEnd = -1  # s[i:boldEnd] should be bolded
+#     for i in range(n):
+#       for word in word:
+#         if s[i:].startswith(word):
+#           boldEnd = max(boldEnd, i + len(word))
+#       bold[i] = boldEnd > i
+#
+#     # Construct the with bold tags
+#     i = 0
+#     while i < n:
+#       if bold[i]:
+#         j = i
+#         while j < n and bold[j]:
+#           j += 1
+#         # s[i:j] should be bolded
+#         ans.append('<b>' + s[i:j] + '</b>')
+#         i = j
+#       else:
+#         ans.append(s[i])
+#         i += 1
+#
+#     return ''.join(ans)
+#
+#
+# s = ["apple", "banana", "cherry"]
+# word = "elden is a gay person"
+# print(Solution.addBoldTag(s, word))
 #
 # def groupAnagrams( li):
 #   """
@@ -254,3 +253,29 @@ print(my_instance.Solution)
 #
 #
 # print("Hello all")
+
+# def manager():
+#
+#     dict = {"joe":200,"jose":100,"john":60}
+#     for dict in i:
+#         if dict < 100:
+#             return i[dict]
+#
+#         elif i > 100:
+#             return dict[i]
+#
+#
+#
+# # dict = ["joe":200,"jose":100,"john":60]
+# print(dict["joe"])
+#
+# manager()
+
+def underpaid_manager_salary(current_salary, market_salary, performance_rating):
+    difference = market_salary - current_salary
+    performance_multiplier = performance_rating / 10
+    underpaid_salary = current_salary + (difference * performance_multiplier)
+    return underpaid_salary
+
+salary = underpaid_manager_salary(50000, 70000, 8)
+print(salary)
