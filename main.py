@@ -279,3 +279,29 @@ def underpaid_manager_salary(current_salary, market_salary, performance_rating):
 
 salary = underpaid_manager_salary(50000, 70000, 8)
 print(salary)
+
+class Palindrome:
+    def isPalindrome(x):
+        string = str(x)
+        left = 0
+        right = len(string) - 1
+
+        while left < right:
+            if string[left] != string[right]:
+
+                return False
+
+            left += 1
+            right -= 1
+
+        return True
+
+
+y = -121
+z = 737
+
+print(Palindrome.isPalindrome(y))
+print(Palindrome.isPalindrome(z))
+
+
+
