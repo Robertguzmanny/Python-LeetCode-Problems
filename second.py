@@ -122,22 +122,22 @@ for manager in underpaid_managers:
 
 test_underpaid_manager()
 
-def manager():
-
-    dict = {"joe":200,"jose":100,"john":60}
-    for i in dict:
-        if i < 100:
-            return dict[i]
-
-        elif i > 100:
-            return dict[i]
-
-
-
-# dict = ["joe":200,"jose":100,"john":60]
-print(dict["joe"])
-
-manager()
+# def manager():
+#
+#     dict = {"joe":200,"jose":100,"john":60}
+#     for i in dict:
+#         if i < 100:
+#             return dict[i]
+#
+#         elif i > 100:
+#             return dict[i]
+#
+#
+#
+# # dict = ["joe":200,"jose":100,"john":60]
+# print(dict["joe"])
+#
+# manager()
 
 def manager():
 
@@ -146,12 +146,12 @@ def manager():
       "mod": 100,
       "year": 60
     }
-    x = thisdict.keys()
-    for i in thisdict:
-        #print(thisdict.get(i))
+    i = thisdict.keys()
+    for x in thisdict:
+        print(thisdict.get(i))
         if thisdict.get(i) < 100:
             print("this person is underpaid")
         else:
-            return None
+            return "Not underpaid"
 
-print(manager())
+manager()

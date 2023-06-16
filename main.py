@@ -252,7 +252,7 @@ def test():
 test()
 
 
-print("Hello all")
+
 
 # def manager():
 #
@@ -297,11 +297,25 @@ class Palindrome:
         return True
 
 
-y = -121
-z = 737
+y = -121000
+z = 7373
 
 print(Palindrome.isPalindrome(y))
 print(Palindrome.isPalindrome(z))
+
+# def manager():
+#     managers = {"Jose": 100, "John": 200, "Jorge": 60}
+#     for i in managers:
+#         if managers < 100:
+#             print(i)
+#         elif managers > 100:
+#             print("is not underpaid")
+#
+#
+# dict = ["joe":200,"jose":100,"john":60]
+#
+#
+# manager()
 
 
 
