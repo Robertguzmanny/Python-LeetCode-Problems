@@ -108,3 +108,31 @@ def funWithAnagrams(text):
 
     return sorted(final_text)
 
+
+def k_most_frequent(nums, k):
+    from collections import Counter
+
+    # Count the frequency of each element
+    frequency = Counter(nums)
+
+    # Sort elements based on their frequencies in descending order
+    sorted_elements = sorted(frequency.keys(), key=lambda x: frequency[x], reverse=True)
+
+    # Return the first k elements
+    return sorted_elements[:k]
+
+
+# Example usage
+nums = [1, 1, 1, 2, 2, 3,3,3,3,3,3]
+k = 3
+result = k_most_frequent(nums, k)
+print(result)
+
+
+def name():
+
+    if my_name == "Diego":
+        print("hey")
+    else:
+        print("gay")
+
