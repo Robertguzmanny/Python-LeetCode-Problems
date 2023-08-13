@@ -317,6 +317,89 @@ print(Palindrome.isPalindrome(z))
 #
 # manager()
 
+def is_formatted_correctly(file_contents):
+    open_parentheses = set(['(', '{', '['])
+    close_parentheses = set([')', '}', ']'])
+    pairs = {'(': ')', '{': '}', '[': ']'}
+    stack = []
+    for line in file_contents:
+        for ch in line:
+            if ch in open_parentheses:
+                stack.append(ch)
+            elif ch in close_parentheses:
+                if not stack:
+                    return False
+                top = stack.pop()
+                if pairs[top] != ch:
+                    return False
+    return len(stack) == 0
+
+input_str = '''[ {company_name: (BlackRock) ticker: (BLK) stock_price: {2022-04-03: ($930) 2022-04-02: ($932)}}, {company_name: (Apple) ticker: (APPL) stock_price: {2022-04-03: ($175) 2022-04-02: ($178)}}]'''
+input_lines = input_str.split('\n')
+if is_formatted_correctly(input_lines):
+    print("valid")
+else:
+    print("invalid")
+
+
+def dfs(fxrate, cur, dest, cur_cost):
+    # cur_cost is the calculation of total cost from src to cur currency in dfs
+
+    # visited and max_curr are global value
+    global max_curr, visited
+
+    # Base case
+    if cur in visited:
+        return
+
+    # Our answer case when src is dest
+    if cur == dest:
+        max_curr = max(max_curr, cur_cost)
+        return
+
+    visited.add(cur)
+    # calling normal dfs
+    for currency, cost in fxrate[cur]:
+        if currency not in visited:
+            dfs(fxrate, currency, dest, cur_cost * cost)
+
+
+# I made an adjacency list of our currency with cost basically a directed graph, and implemented dfs and check at the point
+# when our src is equal to dest this means there is a path so we check there whether the cost is max or not
+# so for that i made max value as a global value because we need to check it every time when our src equal to dest in dfs
+
+
+# fxrate = defaultdict(list)
+
+# this is an extra input i took because we cant able to take input without knowing the no. of edges
+# Your Input format should look like this
+#                 3
+#                 USD,JPY,109
+#                 USD,GBP,0.71
+#                 GBP,JPY,155
+#                 USD
+#                 JPY
+num_of_fx = int(input())
+
+for i in range(num_of_fx):
+    # Input taken with comma seperated
+    currency_1, currency_2, cost = input("input 1st current and 2nd currency and their cost").split(",")
+    cost = float(cost)
+    # added currency with cost in our adjacency list
+    fxrate[currency_1].append((currency_2, cost))
+
+src = input("Enter Selected currency")
+dest = input("Enter target currency")
+
+# took max_curr = -1 as default for the case if there is not any way to convert the currency
+max_curr = -1
+# our visited set
+visited = set()
+# calling dfs
+dfs(fxrate, src, dest, 1)
+
+print(max_curr)
+
 
 
 

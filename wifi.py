@@ -25,8 +25,8 @@
 
 for x in range(1,11):
     if x == 10:
-        break
-    print("reached max number")
+        print("reached max number")
+    break
 
 
 
