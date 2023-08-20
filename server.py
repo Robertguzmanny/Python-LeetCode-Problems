@@ -18,7 +18,7 @@ conn_pool = pool.SimpleConnectionPool(1, 10, **db_params)
 
 @app.route('/')
 def index():
-    return app.send_static_file('index.html')
+    return app.send_static_file('../build"')
 
 
 @app.route('/todos', methods=['POST'])
@@ -119,4 +119,9 @@ def delete_todo(id):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='localhost', port=5001, debug=True)
+
+
+
+
+
