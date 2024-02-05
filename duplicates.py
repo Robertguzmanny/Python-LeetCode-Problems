@@ -1,55 +1,55 @@
 
-# def Main_Solution(nums):
-#     hash = set()
-#     for n in nums:
-#         if n in hash:
-#             return True
-#
-#         hash.add(n)
-#     return False
-#
-#
-# def test():
-#     nums_1 = [1,1,1,1,1,1,1,1, 2, 3, 4, 5, 2, 3, 4, 2]
-#     nums_2 = [1, 2, 3, 4, 5, 2, 3, 42,]
-#     nums = [1, 2, 3]
-#
-#
-#     print(Main_Solution(nums_2))
-#     print(Main_Solution(nums_1))
-#     print(Main_Solution(nums))
-#
-#
-#
-# test()
+def Main_Solution(nums):
+    hash = set()
+    for n in nums:
+        if n in hash:
+            return True
+
+        hash.add(n)
+    return False
 
 
-# def twoSum(nums, target):
-#     hashmap = {}
-#     for i in range(len(nums)):
-#         complement = target - nums[i]
-#         if complement in hashmap:
-#             return [i, hashmap[complement]]
-#         hashmap[nums[i]] = i
+def test():
+    nums_1 = [1,1,1,1,1,1,1,1, 2, 3, 4, 5, 2, 3, 4, 2]
+    nums_2 = [1, 2, 3, 4, 5, 2, 3, 42,]
+    nums = [1, 2, 3]
 
 
-# def test_case():
-#     nums = [1, 4, 6, 8, 9, 20]
-#     target = 14
-#     print(twoSum(nums, target))
+    print(Main_Solution(nums_2))
+    print(Main_Solution(nums_1))
+    print(Main_Solution(nums))
 
 
-# test_case()
 
-# def isAnagram(s, t):
-#     return sorted(s) == sorted(t)
-#
-# def test():
-#     s = "anagram"
-#     t = "naagram"
-#     print(isAnagram(s,t))
-#
-# test()
+test()
+
+
+def twoSum(nums, target):
+    hashmap = {}
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in hashmap:
+            return [i, hashmap[complement]]
+        hashmap[nums[i]] = i
+
+
+def test_case():
+    nums = [1, 4, 6, 8, 9, 20]
+    target = 14
+    print(twoSum(nums, target))
+
+
+test_case()
+
+def isAnagram(s, t):
+    return sorted(s) == sorted(t)
+
+def test():
+    s = "anagram"
+    t = "naagram"
+    print(isAnagram(s,t))
+
+test()
 
 def areAlmostEquivalent(s, t):
     # Initialize the result array
@@ -129,10 +129,5 @@ result = k_most_frequent(nums, k)
 print(result)
 
 
-def name():
 
-    if my_name == "Diego":
-        print("hey")
-    else:
-        print("gay")
 
