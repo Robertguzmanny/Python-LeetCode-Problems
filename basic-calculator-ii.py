@@ -32,6 +32,6 @@ class Solution:
 # Create a Solution object
 sol = Solution()
 # Example 1
-input_str = "3+2*2"
+input_str = "3+2"
 output = sol.calculate(input_str)
 print(output)
