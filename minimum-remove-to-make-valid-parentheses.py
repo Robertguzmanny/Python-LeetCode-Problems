@@ -32,5 +32,5 @@ class Solution:
         return result
 
 test = Solution()
-s = ")("
+s = "()(("
 print(f'{test.minRemoveToMakeValid(s)}')
