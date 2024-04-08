@@ -1,17 +1,15 @@
 class Solution:
-    def maxDepth(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        stack, res = [], 0
+    def maxDepth(self, s: str) -> int:
+        res = 0
+        count = 0
 
         for c in s:
             if c == "(":
-                stack.append(c)
-                res = max(res, len(stack))
+                count += 1
+
             elif c == ")":
-                stack.pop()
+                count -= 1
+            res = max(res, count)
 
         return res
 
