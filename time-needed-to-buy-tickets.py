@@ -6,7 +6,7 @@ class Solution:
                 res += min(tickets[i], tickets[k])
 
             else:
-               res +=  min(tickets[i], tickets[k] - 1)
+               res += min(tickets[i], tickets[k] - 1)
 
 
         return res
